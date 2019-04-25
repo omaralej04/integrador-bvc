@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenUrlProvider } from '../services/open-url/open-url';
+import { SetCategoryService } from '../services/set-category/set-category.service';
 // import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +11,7 @@ import { OpenUrlProvider } from '../services/open-url/open-url';
 export class PersonalPage implements OnInit {
 
   constructor(private oup: OpenUrlProvider,
-              // private router: Router
+              private scg: SetCategoryService
               ) { }
 
   ngOnInit() {
@@ -21,8 +22,7 @@ export class PersonalPage implements OnInit {
   }
 
   setCategory(category: string) {
-    console.log(category);
-    return 'notImplemented';
+    this.scg.setCategory(category);
   }
 
 }

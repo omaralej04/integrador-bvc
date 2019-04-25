@@ -4,7 +4,7 @@ import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { OpenUrlProvider } from './services/open-url/open-url';
-import { Router } from '@angular/router';
+import { SetCategoryService } from './services/set-category/set-category.service';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +16,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private oup: OpenUrlProvider,
-    private router: Router,
-    private menuCtrl: MenuController
+    private scg: SetCategoryService,
   ) {
     this.initializeApp();
   }
@@ -34,36 +33,7 @@ export class AppComponent {
   }
 
   setCategory(category: string) {
-    switch (category) {
-      case 'home':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/home');
-        break;
-      case 'personal':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/personal');
-        break;
-      case 'comercial':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/comercial');
-        break;
-      case 'agencia':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/agencia');
-        break;
-      case 'social':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/social');
-        break;
-      case 'ayuda':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/ayuda');
-        break;
-      case 'config':
-        this.menuCtrl.close();
-        this.router.navigateByUrl('/config');
-        break;
-    }
+    this.scg.setCategory(category);
   }
 
 }

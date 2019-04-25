@@ -1,1 +1,79 @@
+@font-face {
+    font-family: "URW Bookman";
+    font-weight: 300;
+    font-style: normal;
+    src: url(./../../assets/fonts/URWBookman-Light.otf);
+  }
 
+  ion-toolbar {
+      --min-height: 3rem;
+  }
+  
+  #logoHome #logoNavHome {
+    display: block;
+    text-align: center;
+    width: 86%;
+    height: 100%;
+    padding: 1%;
+    margin: 1%;
+  }
+  
+  // Main Menu CSS
+  
+  ion-item {
+    font-size: 100%;
+    text-align: center;
+    --background: #F0F0F0;
+    --border-color: #F0F0F0;
+    border-left: 15px solid rgba(0, 108, 119, 1);
+  }
+  
+  ion-item > ion-label {
+    color: rgba(0, 82, 91, 1);
+    font-size: 1rem;
+  }
+  
+  .mmenu {
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    height: 3rem;
+    padding: 0;
+    margin-right: 2%;
+    margin-bottom: 1rem;
+    background-color: rgba(231, 231, 231, 0.6);
+    box-shadow: 5px 5px 0 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  nav {
+    padding-top: 4%;
+    margin-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 0.1em;
+  }
+  
+  nav ul li svg {
+    position: relative;
+    /*padding-top: 0.2em;*/
+    left: 1%;
+    top: 5%;
+    width: 1rem;
+    height: 1rem;
+    z-index: 9;
+    color: rgba(0, 82, 91, 1);
+  }
+  
+  .ico-mov {
+    padding-left: 1%;
+  }

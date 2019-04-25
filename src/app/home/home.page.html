@@ -1,14 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+  <ion-toolbar color="primary">
+    <ion-title class="logopadding">
+      <img
+        src="./../../assets/imgs/icon-white.svg"
+        alt="Inicio BVC"
+        class="text-center"
+        id="logoNavHome"
+      />
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <nav>
+        <ul>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="setCategory('personal')"><i class="fas fa-user-circle"></i>
+              <ion-label class="ion-text-center">Personas</ion-label>
+            </ion-item>
+            <br>
+          </li>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="setCategory('comercial')"><i class="fas fa-briefcase"></i><ion-label>Empresas</ion-label></ion-item>
+            <br>
+          </li>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="setCategory('agencia')"><i class="fas fa-map-marker-alt"></i><ion-label>Agencias</ion-label></ion-item>
+            <br>
+          </li>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="openURL('https://www.venezolano.com')"><i class="fas fa-globe-americas"></i><ion-label>Venezolano.com</ion-label></ion-item>
+            <br>
+          </li>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="setCategory('social')"><i class="fas fa-share-alt"></i>
+              <ion-label>Redes Sociales</ion-label></ion-item>
+            <br>
+          </li>
+          <li class="ico-mov">
+                <ion-item class="mmenu color" (click)="setCategory('ayuda')"><i class="fas fa-question-circle"></i>
+                  <ion-label>Ayuda</ion-label></ion-item>
+                <br>
+              </li>
+          <li class="ico-mov">
+            <ion-item class="mmenu color" (click)="setCategory('config')"><i class="fas fa-cog"></i><ion-label>Configuración</ion-label></ion-item>
+            <br>
+          </li>
+        </ul>
+      </nav>
 </ion-content>
