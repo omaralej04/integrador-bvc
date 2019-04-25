@@ -1,3 +1,68 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu persistent="true">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+      
+        <ion-content>
+          <!--ContentBody-->
+          <ion-list>
+            <ion-item (click)="setCategory('home')">
+              <ion-avatar item-left>
+                <i class="fas fa-home iconohamburger"></i>
+              </ion-avatar>
+              <h2>Inicio</h2>
+            </ion-item>
+            <ion-item>
+              <ion-avatar item-left>
+                <i class="fas fas fa-user-circle iconohamburger"></i>
+              </ion-avatar>
+              <a href="/personal">
+                ClickPersonas
+              </a>
+              <h2>Personas</h2>
+            </ion-item>
+            <ion-item (click)="setCategory('comercial')">
+              <ion-avatar item-left>
+                <i class="fas fa-briefcase iconohamburger"></i>
+              </ion-avatar>
+              <h2>Empresas</h2>
+            </ion-item>
+            <ion-item (click)="setCategory('agencia')">
+              <ion-avatar item-left>
+                <i class="fas fa-map-marker-alt iconohamburger"></i>
+              </ion-avatar>
+              <h2>Agencias</h2>
+            </ion-item>
+            <ion-item (click)="openURL('http://www.venezolano.com')">
+              <ion-avatar item-left>
+                <i class="fas fa-globe-americas iconohamburger"></i>
+              </ion-avatar>
+              <h2>Venezolano.com</h2>
+            </ion-item>
+            <ion-item (click)="setCategory('social')">
+              <ion-avatar item-left>
+                <i class="fas fa-share-alt iconohamburger"></i>
+              </ion-avatar>
+              <h2>Redes Sociales</h2>
+            </ion-item>
+            <ion-item (click)="setCategory('ayuda')">
+                  <ion-avatar item-left>
+                    <i class="fas fa-question-circle iconohamburger"></i>
+                  </ion-avatar>
+                  <h2>Ayuda</h2>
+                </ion-item>
+                <ion-item (click)="setCategory('config')">
+                     <ion-avatar item-left>
+                       <i class="fas fa-cog iconohamburger"></i>
+                     </ion-avatar>
+                     <h2>Configuración</h2>
+                   </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
