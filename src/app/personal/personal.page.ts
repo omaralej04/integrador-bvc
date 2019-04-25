@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenUrlProvider } from '../services/open-url/open-url';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personal',
@@ -8,7 +9,9 @@ import { OpenUrlProvider } from '../services/open-url/open-url';
 })
 export class PersonalPage implements OnInit {
 
-  constructor(private oup: OpenUrlProvider) { }
+  constructor(private oup: OpenUrlProvider,
+              // private router: Router
+              ) { }
 
   ngOnInit() {
   }

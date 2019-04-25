@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { OpenUrlProvider } from './services/open-url/open-url';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private oup: OpenUrlProvider
+    private oup: OpenUrlProvider,
+    private router: Router,
+    private menuCtrl: MenuController
   ) {
     this.initializeApp();
   }
@@ -31,54 +34,36 @@ export class AppComponent {
   }
 
   setCategory(category: string) {
-    console.log(category);
-    return 'notImplemented';
-  }
-
-  /*
-  setCategory(category: string) {
     switch (category) {
       case 'home':
-        // this.rootPage = HomePage;
-        this.navigateRoot();
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/home');
         break;
       case 'personal':
-      // Circumvent opening infinite subpages of same category
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'PersonalPage') {
-        this.nav.push(PersonalPage);
-      }
-      break;
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/personal');
+        break;
       case 'comercial':
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'ComercialPage') {
-      this.nav.push(ComercialPage);
-      }
-      break;
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/comercial');
+        break;
       case 'agencia':
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'AgenciaPage') {
-      this.nav.push(AgenciaPage);
-      }
-      break;
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/agencia');
+        break;
       case 'social':
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'SocialPage') {
-      this.nav.push(SocialPage);
-      }
-      break;
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/social');
+        break;
       case 'ayuda':
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'AyudaPage') {
-      this.nav.push(AyudaPage);
-      }
-      break;
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/ayuda');
+        break;
       case 'config':
-      console.log('Page ID is: ' + this.nav.getActive().name);
-      if (this.nav.getActive().name != 'ConfigPage') {
-      this.nav.push(ConfigPage);
-        }
-      }
-  } */
+        this.menuCtrl.close();
+        this.router.navigateByUrl('/config');
+        break;
+    }
+  }
 
 }
