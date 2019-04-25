@@ -1,6 +1,8 @@
 {
   "name": "Integrador BVC",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "77957e73"
 }
