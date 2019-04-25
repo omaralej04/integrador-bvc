@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons end>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title>
+        <img
+          src="./../../assets/imgs/icon-white-notletters.svg"
+          alt="Inicio BVC"
+          height="33"
+          width="33"
+          class="text-center"
+        />
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding class="content">
+    <h2 class="page-title"><i class="fas fa-user-circle"></i> Personas</h2>
+    <!-- MENU DE OPCIONES DE PERSONAL -->
+  
+    <!-- Acuerdate de arreglar el click porfa, entre el href y el span-->
+    <nav>
+      <ul>
+        <li>
+          
+          <a
+            class="mmenu color"
+            href="#"
+            (click)="setCategory('vol')"
+            ><span>Venezolano Online</span><i class="fas fa-user"></i></a
+          >
+          <br />
+        </li>
+        <li>
+          <a
+            class="mmenu color"
+            href="#"
+            (click)="
+              openURL(
+                'http://www.venezolano.com/personal/manuales/autenticador/index.html'
+              )"
+            ><i class="fas fa-unlock-alt"></i><span>Autenticador BVC</span></a>
+          <br />
+        </li>
+        <li>
+          <a
+            class="mmenu color"
+            href="#"
+            (click)="openURL('https://vol.venezolano.com/CtaAper')"
+            ><i class="fas fa-list-ul"></i><span>Preapertura de Cuentas</span></a
+          >
+          <br />
+        </li>
+        <li>
+          <a class="mmenu color" href="#" (click)="setCategory('bloact')"
+            ><i class="fas fa-key"></i><span>Bloqueo/Activación</span></a>
+          <br />
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <ion-slides pager="true" id="infoSlider">
+  
+      <ion-slide>
+        <img src="http://www.venezolano.com/images/galeria/606_1.jpg" alt="img1">
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="http://www.venezolano.com/images/galeria/616_1.jpg" alt="img2">
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="http://www.venezolano.com/images/galeria/612_1.jpg" alt="img3">
+      </ion-slide>
+  
+    </ion-slides>
+  </ion-content>
+  
