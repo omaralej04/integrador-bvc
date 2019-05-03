@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OpenUrlProvider } from './services/open-url/open-url';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import * as $ from 'jquery'; // Fix Versioning JQuery-Typescript
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

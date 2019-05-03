@@ -1,27 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-ayuda',
-  templateUrl: './ayuda.page.html',
-  styleUrls: ['./ayuda.page.scss'],
-})
-export class AyudaPage implements OnInit {
-
-  constructor() { }
-
-  openModal(topic) {
-    let modal = this.modalCtrl.create(ModalTemplatePage, topic);
-    modal.present();
-  }
-
-  ngOnInit() {
-  }
-
-}
+import { ModalController, NavParams, Platform } from '@ionic/angular';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ViewController } from '@ionic/core';
 
 // Modal Component
 @Component({
-  templateUrl: "modalTemplate.html"
+  templateUrl: 'modalTemplate.html'
 })
 
 export class ModalTemplatePage {
@@ -31,10 +15,11 @@ export class ModalTemplatePage {
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public modalCtrl: ModalController
   ) {
 
-    var topicos = [
+    const topicos = [
       {
         name: 'Ingreso y Recuperación de Clave',
         link: 'https://www.youtube.com/embed/pkMxzN7de9o',
@@ -106,11 +91,35 @@ export class ModalTemplatePage {
         name: 'Consulta y Solicitud de Fidecomiso',
         link: 'https://www.youtube.com/embed/aLt2iLXadg4',
       },
-    ]
-    this.topico = topicos[this.params.get('topic')]
+    ];
+    this.topico = topicos[this.params.get('topic')];
   }
 
   dismiss() {
-    this.viewCtrl.dismiss();
+    this.modalCtrl.dismiss();
   }
+}
+
+@Component({
+  selector: 'app-ayuda',
+  templateUrl: './ayuda.page.html',
+  styleUrls: ['./ayuda.page.scss'],
+})
+export class AyudaPage implements OnInit {
+
+  constructor(
+    private modalCtrl: ModalController
+  ) { }
+
+  openModal(topic) {
+    const modal = this.modalCtrl.create({
+      component: ModalTemplatePage,
+      componentProps: topic
+    });
+    modal.finally();
+  }
+
+  ngOnInit() {
+  }
+
 }

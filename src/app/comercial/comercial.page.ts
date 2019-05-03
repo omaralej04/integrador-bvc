@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OpenUrlProvider } from '../services/open-url/open-url';
 
 @Component({
   selector: 'app-comercial',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComercialPage implements OnInit {
 
-  constructor() { }
+  constructor(public oup: OpenUrlProvider) { }
 
   ngOnInit() {
   }
 
+  openURL(url) {
+    this.oup.openURL(url);
+  }
 }

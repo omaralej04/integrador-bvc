@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: 'comercial', loadChildren: './comercial/comercial.module#ComercialPageModule' },
   { path: 'config', loadChildren: './config/config.module#ConfigPageModule' },
   { path: 'social', loadChildren: './social/social.module#SocialPageModule' },
-  { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialPageModule' },
   { path: 'vol', loadChildren: './vol/vol.module#VolPageModule' },
 ];
 

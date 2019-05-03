@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OpenUrlProvider } from '../services/open-url/open-url';
 
 @Component({
   selector: 'app-vol',
@@ -6,25 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vol.page.scss'],
 })
 export class VolPage implements OnInit {
+  passDat: any;
+  loginDat: any;
 
-  constructor() { }
+  constructor(public oup: OpenUrlProvider) { }
 
   ngOnInit() {
   }
 
   submitPOST() {
-    var login;
-    var pass;
+    let login;
+    let pass;
 
     login = this.loginDat;
     pass = this.passDat;
 
-    console.log("Login: " + login + " Pass: " + pass)
+    console.log('Login: ' + login + ' Pass: ' + pass);
 
-    //let header: {
-      //'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      //'Content-Type': 'application/x-www-form-urlencoded',
-      //}
+    // let header: {
+      // 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      // }
 
       /*
     let body = {
@@ -37,7 +40,7 @@ export class VolPage implements OnInit {
       datoLogin: login,
       claveEntrada: pass
     }; */
-    
+
     /*
     this.http.post<String>('/volRequest/VOL-Web/vc510.action;jsessionid=' + '06727472AD727BF5CFBD130BB239FBEF'
     , body, {headers: header , responseType: 'html' as 'string'})
@@ -48,7 +51,8 @@ export class VolPage implements OnInit {
       this.openURL(pageContentUrl);
     }); */
 
-    var pageContent = '<html><head></head><body><form id="loginForm" action="/volRequest/VOL-Web/vc510.action;jsessionid=06727472AD727BF5CFBD130BB239FBEF" method="post">' +
+// tslint:disable-next-line: max-line-length
+    const pageContent = '<html><head></head><body><form id="loginForm" action="/volRequest/VOL-Web/vc510.action;jsessionid=06727472AD727BF5CFBD130BB239FBEF" method="post">' +
     '<input type="hidden" name="datoLogin" value="' + login + '">' +
     '<input type="hidden" name="claveEntrada" value="' + pass + '">' +
     '<input type="hidden" name="transactionRequest" value="510" id="frmlogin_transactionRequest"/>' +
@@ -57,10 +61,10 @@ export class VolPage implements OnInit {
     '<input type="hidden" name="sistemaOperativo" value="" id="frmlogin_sistemaOperativo"/>' +
     '<input type="hidden" name="browser" value="" id="frmlogin_browser"/>' +
     '<input type="hidden"  id="versionCompleta" name="versionCompleta" />' +
-    '</form> <script type="text/javascript">document.getElementById("loginForm").submit() />'
+    '</form> <script type="text/javascript">document.getElementById("loginForm").submit() />';
 
 
-    var pageContentUrl = 'data:text/html;base64,' + btoa(pageContent as 'string');
+    const pageContentUrl = 'data:text/html;base64,' + btoa(pageContent as 'string');
     this.openURL(pageContentUrl);
   }
 

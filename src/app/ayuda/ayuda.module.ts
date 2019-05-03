@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AyudaPage } from './ayuda.page';
+import { AyudaPage, ModalTemplatePage } from './ayuda.page';
 
 const routes: Routes = [
   {
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AyudaPage]
+  declarations: [AyudaPage, ModalTemplatePage],
 })
 export class AyudaPageModule {}
