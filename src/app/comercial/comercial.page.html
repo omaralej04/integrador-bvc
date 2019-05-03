@@ -1,9 +1,80 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>comercial</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" end>
+        <ion-menu-button end autoHide="false">
+          </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img
+        src="./../../assets/imgs/icon-white-notletters.svg"
+        alt="Inicio BVC"
+        height="33"
+        width="33"
+        class="text-center"
+      />
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="content">
+  <h2 class="page-title"><i class="fas fa-briefcase"></i> Empresas</h2>
+  <nav>
+    <ul>
+      <li>
+        <a
+          class="mmenu color"
+          href="#"
+          (click)="openURL('https://vob.venezolano.com/indexMobile.jsp')"
+          ><i class="fas fa-users"></i><span>Venecredit Office Banking</span></a
+        >
+        <br />
+      </li>
+      <li>
+        <a
+          class="mmenu color"
+          href="#"
+          (click)="openURL('https://cb.venezolano.com/Cobranzas/jsp/')"
+          ><i class="fas fa-user-tie"></i><span>Cobranzas Corporativas</span></a
+        >
+        <br />
+      </li>
+      <li>
+        <a
+          class="mmenu color"
+          href="#"
+          (click)="
+            openURL('https://pos.venezolano.com/posvirtual/jsp/inicio.jsp')
+          "
+          ><i class="fas fa-user-lock"></i><span>PosVirtual</span></a
+        >
+        <br />
+      </li>
+      <li>
+        <a
+          class="mmenu color"
+          href="#"
+          (click)="openURL('http://depweb.venezolano.com/')"
+          ><i class="fas fa-globe-americas"></i><span>Depósitos Corporativos Web</span></a
+        >
+        <br />
+      </li>
+    </ul>
+  </nav>
+  <br>
+  <ion-slides pager="true" id="infoSlider">
 
+    <ion-slide>
+      <img src="http://www.venezolano.com/images/galeria/606_1.jpg" alt="img1">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="http://www.venezolano.com/images/galeria/616_1.jpg" alt="img2">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="http://www.venezolano.com/images/galeria/612_1.jpg" alt="img3">
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>
+

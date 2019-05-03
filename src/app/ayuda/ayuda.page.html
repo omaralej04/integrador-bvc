@@ -1,9 +1,73 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ayuda</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" end>
+        <ion-menu-button end autoHide="false">
+          </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img
+        src="./../../assets/imgs/icon-white-notletters.svg"
+        alt="Inicio BVC"
+        height="33"
+        width="33"
+        class="text-center"
+      />
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header color="primary">
+        Tutoriales Venezolano Online:
+      </ion-list-header>
+      <br>
+      <ion-item (click)="openModal({topic: 0})" >
+        <p>Ingreso y Recuperación de Clave</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 1})" >
+        <p>Recuperación de Clave y Usuario</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 2})" >
+        <p>Asignación de Parámetros Personales</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 3})" >
+        <p>Solicitud de Referencias Bancarias</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 4})" >
+        <p>Suspensión de Cheques</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 5})" >
+        <p>Solicitud y Activación de Chequeras</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 6})" >
+        <p>Solicitud de Cheques de Gerencia</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 7})" >
+        <p>Solicitud de Avance de Efectivo</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 8})" >
+        <p>Solicitud y Activación de Tarjetas de Débito</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 9})" >
+        <p>Transferencias a Terceros</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 10})" >
+        <p>Pago de Servicios</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 11})" >
+        <p>Pago de Tarjetas de Crédito</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 12})" >
+        <p>Agenda de Pagos</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 13})" >
+        <p>Domiciliación de Servicios</p>
+      </ion-item>
+      <ion-item (click)="openModal({topic: 14})" >
+        <p>Consulta y Solicitud de Fidecomiso</p>
+      </ion-item>
+    </ion-list>
 
 </ion-content>

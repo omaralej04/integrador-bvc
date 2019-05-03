@@ -1,9 +1,84 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>vol</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" end>
+        <ion-menu-button end autoHide="false">
+          </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img
+        src="./../../assets/imgs/icon-white-notletters.svg"
+        alt="Inicio BVC"
+        height="33"
+        width="33"
+        class="text-center"
+      />
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="content">
+
+  <h2 class="page-title text-center"><i class="fas fa-user"></i> Venezolano Online</h2>
+
+  <form id="frmlogin" name="frmlogin" action="/VOL-Web/vc510.action" method="POST" enctype="application/form-url-encoded">
+   <input type="hidden" name="transactionRequest" value="510" id="frmlogin_transactionRequest"/>
+<input type="hidden" name="key" value="" id="frmlogin_key"/>
+<input type="hidden" name="event" value="" id="frmlogin_event"/>
+<input type="hidden" name="sistemaOperativo" value="" id="frmlogin_sistemaOperativo"/>
+<input type="hidden" name="browser" value="" id="frmlogin_browser"/>
+<input type="hidden"  id="versionCompleta" name="versionCompleta" />
+<div class="col-12 text-center mb-2" id="errorAction">
+  
+</div>
+<ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h4>Login Form</h4>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input type="text" name="dat" placeholder="Username" [(ngModel)]="loginDat"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-input type="password" name="dat" placeholder="Password" [(ngModel)]="passDat"></ion-input>
+          </ion-item>
+          <br>
+          <div class="form-row">
+            <br>	        
+              <button type="submit" id="aceptar" class="btn boton btn-outline-primary col-4 offset-2 col-sm-3 offset-sm-3 col-lg-2 offset-lg-4" style="margin-right: 10px" (click)="submitPOST()">Aceptar</button>
+      
+              <input type="reset" value="Cancelar" class="btn boton btn-outline-danger col-4 offset-2 col-sm-3 col-lg-2" style="margin-left: 10px"/>
+            
+        </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!-- Old Login 
+    <div class="input-group mb-2 col-md-6 offset-md-3 ">
+    <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-user" style="width:2rem;font-size:2rem;"></i></span>
+    </div>
+    <input type="text" id="datoLogin" class="form-control" placeholder="Nombre de usuario" name="datoLogin"/>
+  </div>
+    <div class="input-group mb-2 col-md-6 offset-md-3 ">
+    <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-lock" style="width:2rem;font-size:2rem;"></i></span>
+    </div>
+    <input id="clave" name="claveEntrada" type="password" class="form-control"  maxlength="10" autocomplete="off" onpaste="return false;" placeholder="Clave de ingreso" onfocus="show_vk(this); input_size=10;"/>
+  </div>  			        	
+<div class="form-row">	        
+      <input type="submit" value="Aceptar" id="aceptar" class="btn  boton col-4 offset-2 col-sm-3 offset-sm-3 col-lg-2 offset-lg-4" style="margin-right: 10px"/>
+
+      <input type="reset" value="Cancelar" class="btn boton col-4 offset-2 col-sm-3 col-lg-2" style="margin-left: 10px"/>
+    
+</div>
+    -->
+<!-- Botones -->
+  </form>
+
 
 </ion-content>
+

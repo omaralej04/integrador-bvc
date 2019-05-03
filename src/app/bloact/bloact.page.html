@@ -1,9 +1,108 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>bloact</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" end>
+        <ion-menu-button end autoHide="false">
+          </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img
+        src="./../../assets/imgs/icon-white-notletters.svg"
+        alt="Inicio BVC"
+        height="33"
+        width="33"
+        class="text-center"
+      />
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="content">
+  <h2 class="page-title"><strong><i class="fas fa-key"></i> Bloqueo o activación</strong></h2>
+  <p class="pt-3">
+    Seleccione la <strong>opción</strong> de la operación que desee realizar:
+  </p>
+  <!-- Formulario de opciones + cedula + cuenta ACTIVACION -->
+  <div class="form-group actform">
+    <div class="opePick">
+      <button class="btn btn-primary btn-lg funcbuttonact" (click)="mostrarSiguiente()">Activación</button>
+      <button class="btn btn-primary btn-lg funcbuttonbloq" (click)="mostrarSiguiente()">Bloqueo</button>
+    </div>
+    <br>
+    <!-- OPERACION A REALIZAR -->
+    <label>Operación que desea realizar:</label>
+    <select name="oper" id="operAc" class="form-control">
+      <option value="">Seleccione...</option>
+      <option value="AT">Activación total</option>
+      <option value="AP">Para uso en punto de venta</option>
+      <option value="AC">Para uso en cajeros automáticos</option>
+      <option value="AV">Para uso en Venezolano Online</option>
+      <option value="AI">Para compras en internet</option>
+    </select>
+    <br />
+    <!-- NUMERO DE TARJETA -->
+    <label for="numtarjAc">Número de tarjeta:</label>
+    <input type="number" class="form-control" name="numtarj" id="numtarjAc" aria-describedby="nomUserId" placeholder="Ejemplo: 0000 1111 2222 3333" />
+    <br />
+    <!-- DOCUMENTO DE IDENTIDAD (CEDULA) -->
+    <label>Documento de identidad:</label>
+    <div class="form-row">
+      <div class="col-3 pt-1">
+        <select name="nacionalidad" id="nacionalidad" class="form-control">
+          <option value="V">V</option>
+          <option value="E">E</option>
+          <option value="P">P</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="cedula" id="cedulaAc" placeholder="Ejemplo. 28155089" />
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary mb-2" (click)="generarVTexto()">
+      Aceptar
+    </button>
+  </div>
 
+  <!-- Formulario de opciones + cedula + cuenta BLOQUEO -->
+  <div class="form-group bloqueoform">
+    <div class="opePick">
+      <button class="btn btn-primary btn-lg funcbuttonact" (click)="mostrarSiguiente()">Activación</button>
+      <button class="btn btn-primary btn-lg funcbuttonbloq" (click)="mostrarSiguiente()">Bloqueo</button>
+    </div>
+    <br>
+    <!-- OPERACION A REALIZAR -->
+    <label>Operación que desea realizar:</label>
+    <select name="oper" id="operBloq" class="form-control" required>
+      <option value="">Seleccione...</option>
+      <option value="BT">Bloqueo total</option>
+      <option value="BP">Para uso en punto de venta</option>
+      <option value="BC">Para uso en cajeros automáticos</option>
+      <option value="BV">Para uso en Venezolano Online</option>
+      <option value="BI">Para compras en Internet</option>
+    </select>
+    <br />
+    <!-- NUMERO DE TARJETA -->
+    <label for="numtarjBloq">Número de tarjeta:</label>
+    <input type="number" class="form-control" name="numtarj" id="numtarjBloq" aria-describedby="nomUserId" placeholder="Ejemplo: 0000 1111 2222 3333" />
+    <br />
+    <!-- DOCUMENTO DE IDENTIDAD (CEDULA) -->
+    <label>Documento de identidad:</label>
+    <div class="form-row">
+      <div class="col-3 pt-1">
+        <select name="nacionalidad" id="nacionalidad" class="form-control">
+          <option value="V">V</option>
+          <option value="E">E</option>
+          <option value="P">P</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="cedula" id="cedulaBloq"
+          placeholder="Ejemplo. 28155089" />
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary mb-2" (click)="generarVTexto()">
+      Aceptar
+    </button>
+  </div>
 </ion-content>
